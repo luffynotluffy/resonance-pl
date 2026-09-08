@@ -491,6 +491,7 @@ function Index() {
         <Projects />
         <Focus />
         <Join />
+        <Partnership />
         <Contact />
       </main>
       <Footer />
