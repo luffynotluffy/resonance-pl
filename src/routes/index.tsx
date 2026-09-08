@@ -59,6 +59,7 @@ const navLinks = [
   { label: "Projects", href: "#projects" },
   { label: "Focus", href: "#focus" },
   { label: "Join", href: "#join" },
+  { label: "Partnership", href: "#partnership" },
   { label: "Contact", href: "#contact" },
 ];
 
