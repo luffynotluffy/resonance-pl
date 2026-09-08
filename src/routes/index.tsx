@@ -324,7 +324,7 @@ function Join() {
             Join Us
           </p>
           <h2 className="mt-3 text-center font-heading text-3xl font-bold text-deep-teal md:text-4xl">
-            Become a RESONANCE Volunteer
+            Join the RESONANCE Team
           </h2>
         </Reveal>
         <Reveal className="mt-10">
@@ -340,7 +340,7 @@ function Join() {
               <ol className="list-decimal space-y-2 pl-5 text-foreground">
                 <li>Send your CV and motivation letter to us.</li>
                 <li>Our team will review your application and get back to you.</li>
-                <li>If there&apos;s a match, you&apos;ll join our volunteer network and upcoming activities.</li>
+                <li>If there&apos;s a match, you&apos;ll join our team and upcoming activities.</li>
               </ol>
             </div>
             <div className="mt-8">
