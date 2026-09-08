@@ -346,7 +346,7 @@ function Join() {
             </div>
             <div className="mt-8">
               <a
-                href={`mailto:${contactEmail}?subject=Volunteer Application - RESONANCE`}
+                href={`mailto:${contactEmail}?subject=Team Application - RESONANCE`}
                 className="inline-flex items-center justify-center rounded-full bg-gold px-8 py-3.5 font-heading font-semibold text-deep-teal transition-all duration-300 hover:bg-gold/90 hover:shadow-lg hover:shadow-gold/20"
               >
                 Send CV & Motivation Letter
