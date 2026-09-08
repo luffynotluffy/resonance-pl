@@ -18,34 +18,16 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const projects = [
+const projectCategories = [
   {
-    title: "Digital Wellbeing Lab",
     action: "KA152-YOU",
-    theme: "Digital wellbeing & technology",
-    country: "Poland · Italy · Spain",
-    status: "Partner",
+    name: "Youth Exchanges",
+    description: "Short-term mobilities where young people come together to learn, exchange ideas, and grow.",
   },
   {
-    title: "Mindful Youth",
     action: "KA153-YOU",
-    theme: "Mental wellbeing & emotional resilience",
-    country: "Poland · Greece · Portugal",
-    status: "Sending Organisation",
-  },
-  {
-    title: "Green Horizons",
-    action: "KA152-YOU",
-    theme: "Sustainability & environmental awareness",
-    country: "Poland · Romania · Czechia",
-    status: "Participating Organisation",
-  },
-  {
-    title: "Include Us",
-    action: "KA153-YOU",
-    theme: "Inclusion, diversity & youth participation",
-    country: "Poland · Germany · France",
-    status: "Partner",
+    name: "Training Courses",
+    description: "Professional development opportunities for youth workers and leaders.",
   },
 ];
 
@@ -76,8 +58,11 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
   { label: "Focus", href: "#focus" },
+  { label: "Join", href: "#join" },
   { label: "Contact", href: "#contact" },
 ];
+
+const contactEmail = "info.resonance.pl@gmail.com";
 
 function useScrollReveal<T extends HTMLElement>() {
   const ref = useRef<T>(null);
@@ -264,23 +249,29 @@ function Projects() {
             Mobility. Learning. Cooperation.
           </h2>
         </Reveal>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {projects.map((project, index) => (
-            <Reveal key={project.title} className="h-full" delay={`${index * 100}ms`}>
-              <div className="group flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-bright-teal/30 hover:shadow-md">
+        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+          {projectCategories.map((category, index) => (
+            <Reveal key={category.action} className="h-full" delay={`${index * 100}ms`}>
+              <div className="flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-sm md:p-8">
                 <div className="flex items-center justify-between gap-3">
                   <span className="rounded-full bg-deep-teal/10 px-3 py-1 font-mono text-xs font-semibold text-deep-teal">
-                    {project.action}
-                  </span>
-                  <span className="rounded-full bg-gold/20 px-3 py-1 text-xs font-semibold text-deep-teal">
-                    {project.status}
+                    {category.action}
                   </span>
                 </div>
-                <h3 className="mt-5 font-heading text-xl font-bold text-deep-teal">
-                  {project.title}
+                <h3 className="mt-5 font-heading text-2xl font-bold text-deep-teal">
+                  {category.name}
                 </h3>
-                <p className="mt-2 text-sm font-medium text-bright-teal">{project.theme}</p>
-                <p className="mt-auto pt-4 text-sm text-muted-foreground">{project.country}</p>
+                <p className="mt-2 text-muted-foreground">{category.description}</p>
+                <div className="mt-auto pt-8">
+                  <div className="rounded-xl border border-dashed border-border bg-cream/50 p-6 text-center">
+                    <p className="font-heading text-sm font-semibold text-deep-teal">
+                      No open calls right now
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Check back soon — new opportunities will appear here.
+                    </p>
+                  </div>
+                </div>
               </div>
             </Reveal>
           ))}
@@ -324,6 +315,58 @@ function Focus() {
   );
 }
 
+function Join() {
+  return (
+    <section id="join" className="bg-cream px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-4xl">
+        <Reveal>
+          <p className="text-center font-heading text-sm font-semibold uppercase tracking-widest text-bright-teal">
+            Join Us
+          </p>
+          <h2 className="mt-3 text-center font-heading text-3xl font-bold text-deep-teal md:text-4xl">
+            Become a RESONANCE Volunteer
+          </h2>
+        </Reveal>
+        <Reveal className="mt-10">
+          <div className="rounded-2xl border border-border bg-card p-8 text-center shadow-sm md:p-10">
+            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-foreground md:text-xl">
+              Want to co-create Erasmus+ projects and youth initiatives with us? We&apos;re
+              always happy to meet motivated young people ready to get involved.
+            </p>
+            <div className="mt-8 space-y-4 rounded-xl bg-cream/70 p-6 text-left md:p-8">
+              <p className="font-heading font-semibold text-deep-teal">
+                How to apply:
+              </p>
+              <ol className="list-decimal space-y-2 pl-5 text-foreground">
+                <li>Send your CV and motivation letter to us.</li>
+                <li>Our team will review your application and get back to you.</li>
+                <li>If there&apos;s a match, you&apos;ll join our volunteer network and upcoming activities.</li>
+              </ol>
+            </div>
+            <div className="mt-8">
+              <a
+                href={`mailto:${contactEmail}?subject=Volunteer Application - RESONANCE`}
+                className="inline-flex items-center justify-center rounded-full bg-gold px-8 py-3.5 font-heading font-semibold text-deep-teal transition-all duration-300 hover:bg-gold/90 hover:shadow-lg hover:shadow-gold/20"
+              >
+                Send CV & Motivation Letter
+              </a>
+            </div>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Write to{" "}
+              <a
+                href={`mailto:${contactEmail}`}
+                className="text-deep-teal underline-offset-4 hover:underline"
+              >
+                {contactEmail}
+              </a>
+            </p>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 function Contact() {
   return (
     <section id="contact" className="bg-deep-teal px-6 py-20 md:py-28">
@@ -344,10 +387,10 @@ function Contact() {
               <p>
                 Email:{" "}
                 <a
-                  href="mailto:hello@resonance-youth.org"
+                  href={`mailto:${contactEmail}`}
                   className="text-gold underline-offset-4 transition-colors hover:underline"
                 >
-                  hello@resonance-youth.org
+                  {contactEmail}
                 </a>
               </p>
             </div>
@@ -403,6 +446,7 @@ function Index() {
         <About />
         <Projects />
         <Focus />
+        <Join />
         <Contact />
       </main>
       <Footer />
