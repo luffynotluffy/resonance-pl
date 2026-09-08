@@ -59,6 +59,7 @@ const navLinks = [
   { label: "Projects", href: "#projects" },
   { label: "Focus", href: "#focus" },
   { label: "Join", href: "#join" },
+  { label: "Partnership", href: "#partnership" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -345,10 +346,63 @@ function Join() {
             </div>
             <div className="mt-8">
               <a
-                href={`mailto:${contactEmail}?subject=Volunteer Application - RESONANCE`}
+                href={`mailto:${contactEmail}?subject=Team Application - RESONANCE`}
                 className="inline-flex items-center justify-center rounded-full bg-gold px-8 py-3.5 font-heading font-semibold text-deep-teal transition-all duration-300 hover:bg-gold/90 hover:shadow-lg hover:shadow-gold/20"
               >
                 Send CV & Motivation Letter
+              </a>
+            </div>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Write to{" "}
+              <a
+                href={`mailto:${contactEmail}`}
+                className="text-deep-teal underline-offset-4 hover:underline"
+              >
+                {contactEmail}
+              </a>
+            </p>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function Partnership() {
+  return (
+    <section id="partnership" className="bg-cream px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-4xl">
+        <Reveal>
+          <p className="text-center font-heading text-sm font-semibold uppercase tracking-widest text-bright-teal">
+            Partnership
+          </p>
+          <h2 className="mt-3 text-center font-heading text-3xl font-bold text-deep-teal md:text-4xl">
+            Partner With Us on Future Erasmus+ Projects
+          </h2>
+        </Reveal>
+        <Reveal className="mt-10">
+          <div className="rounded-2xl border border-border bg-card p-8 text-center shadow-sm md:p-10">
+            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-foreground md:text-xl">
+              Are you an organisation looking for a reliable partner for upcoming Erasmus+
+              projects? We&apos;re open to collaborating on youth exchanges, training courses,
+              and other youth-focused initiatives.
+            </p>
+            <div className="mt-8 space-y-4 rounded-xl bg-cream/70 p-6 text-left md:p-8">
+              <p className="font-heading font-semibold text-deep-teal">
+                How to partner:
+              </p>
+              <ol className="list-decimal space-y-2 pl-5 text-foreground">
+                <li>Send us your organisation&apos;s PIF (Partner Identification Form).</li>
+                <li>Our team will review your profile and areas of interest.</li>
+                <li>We&apos;ll get in touch to explore how we can build something together.</li>
+              </ol>
+            </div>
+            <div className="mt-8">
+              <a
+                href={`mailto:${contactEmail}?subject=Partnership Request - RESONANCE`}
+                className="inline-flex items-center justify-center rounded-full bg-gold px-8 py-3.5 font-heading font-semibold text-deep-teal transition-all duration-300 hover:bg-gold/90 hover:shadow-lg hover:shadow-gold/20"
+              >
+                Send Your PIF
               </a>
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
@@ -437,6 +491,7 @@ function Index() {
         <Projects />
         <Focus />
         <Join />
+        <Partnership />
         <Contact />
       </main>
       <Footer />
