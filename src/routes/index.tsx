@@ -89,7 +89,7 @@ function useScrollReveal<T extends HTMLElement>() {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry?.isIntersecting) {
           setIsVisible(true);
           observer.unobserve(element);
         }
@@ -104,11 +104,20 @@ function useScrollReveal<T extends HTMLElement>() {
   return { ref, isVisible };
 }
 
-function Reveal({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function Reveal({
+  children,
+  className = "",
+  delay,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  delay?: string;
+}) {
   const { ref, isVisible } = useScrollReveal<HTMLDivElement>();
   return (
     <div
       ref={ref}
+      style={{ transitionDelay: delay }}
       className={`transition-all duration-700 ease-out ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       } ${className}`}
@@ -257,7 +266,7 @@ function Projects() {
         </Reveal>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {projects.map((project, index) => (
-            <Reveal key={project.title} className="h-full" style={{ transitionDelay: `${index * 100}ms` } as React.CSSProperties}>
+            <Reveal key={project.title} className="h-full" delay={`${index * 100}ms`}>
               <div className="group flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-bright-teal/30 hover:shadow-md">
                 <div className="flex items-center justify-between gap-3">
                   <span className="rounded-full bg-deep-teal/10 px-3 py-1 font-mono text-xs font-semibold text-deep-teal">
@@ -295,7 +304,7 @@ function Focus() {
         </Reveal>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {focusAreas.map((area, index) => (
-            <Reveal key={area.title} style={{ transitionDelay: `${index * 100}ms` } as React.CSSProperties}>
+            <Reveal key={area.title} delay={`${index * 100}ms`}>
               <div className="rounded-2xl border border-border bg-card p-6 text-center shadow-sm transition-all duration-300 hover:border-bright-teal/30 hover:shadow-md">
                 <span className="text-4xl" role="img" aria-label={area.title}>
                   {area.emoji}
