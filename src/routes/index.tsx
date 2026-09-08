@@ -396,22 +396,12 @@ function Contact() {
             </div>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com/resonance.pl/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full border border-cream/20 bg-cream/10 px-5 py-2.5 text-sm font-medium text-cream transition-all duration-300 hover:bg-cream/20"
               >
                 Instagram
-              </a>
-              <a
-                href="#"
-                className="inline-flex items-center justify-center rounded-full border border-cream/20 bg-cream/10 px-5 py-2.5 text-sm font-medium text-cream transition-all duration-300 hover:bg-cream/20"
-              >
-                Facebook
-              </a>
-              <a
-                href="#"
-                className="inline-flex items-center justify-center rounded-full border border-cream/20 bg-cream/10 px-5 py-2.5 text-sm font-medium text-cream transition-all duration-300 hover:bg-cream/20"
-              >
-                LinkedIn
               </a>
             </div>
           </div>
